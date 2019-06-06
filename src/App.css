@@ -1,33 +1,56 @@
-.App {
-  text-align: center;
+body {
+  background-color: #474954;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  background-color: #474954;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
 }
-
-.App-link {
-  color: #61dafb;
+.head {
+  flex-basis: 25%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.head h1 {
+  font-family: "Alfa Slab One", cursive;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #7284a8;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.result h1 {
+  font-family: "Gentium Book Basic", serif;
+  font-size: 2.5rem;
+  color: #9e788f;
+  letter-spacing: 1px;
+}
+.head p {
+  font-family: "Gentium Book Basic", serif;
+}
+.result {
+  flex-basis: 25%;
+}
+.gamec {
+}
+.game_ar {
+  position: relative;
+  margin: 50px auto;
+  width: 600px;
+  height: 600px;
+  background-color: #575963;
+}
+.snake {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: #a9b3ce;
+  z-index: 2;
+}
+.food {
+  position: absolute;
+  width: 2%;
+  height: 2%;
+  background-color: #7cdedc;
+  z-index: 1;
 }
