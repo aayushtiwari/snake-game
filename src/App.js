@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Snake from "./Snake";
-import Food from "./Food";
+import Snake from "./Components/Snake";
+import Food from "./Components/Food";
 import "./App.css";
 const getCoordinates = () => {
   let min = 1;
@@ -13,7 +13,8 @@ const initialState = {
   food: getCoordinates(),
   speed: 100,
   direction: "RIGHT",
-  snakeParts: [[0, 0], [2, 0]]
+  snakeParts: [[0, 0], [2, 0]],
+  hscore:null
 };
 class App extends Component {
   constructor() {
@@ -113,8 +114,14 @@ class App extends Component {
     }
   }
   gameOver() {
-    alert(`Game Over score: ${this.state.snakeParts.length}`);
-    this.setState(initialState);
+    alert(`Game Over score: ${this.state.snakeParts.length-2}`);
+    this.setState({
+            food: getCoordinates(),
+            speed: 100,
+            direction: "RIGHT",
+            snakeParts: [[0, 0], [2, 0]],
+            hscore:this.state.snakeParts.length>this.state.hscore?this.state.snakeParts.length:this.state.hscore
+    });
   }
   render() {
     return (
@@ -129,7 +136,9 @@ class App extends Component {
           </div>
         </div>
         <div className="result">
-          <h1>Leaderboard</h1>
+          <h1>Score</h1>
+          <p>My score : {this.state.snakeParts.length-2}</p>
+          <p>Top Score : {this.state.hscore?this.state.hscore-2:0}</p>
         </div>
       </div>
     );
